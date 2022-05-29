@@ -1,2 +1,4 @@
-<h1>web-330</h1>
-Repo for class web-330
+<h1>WEB 330 Enterprise JavaScript II</h1>
+<h2>Contributors</h2>
+<li>Professor Kumar</li>
+<li>Andrew Britt</li>
