@@ -1,5 +1,11 @@
 /*
-hello again you World you
+===========================================
+; File: theme.js
+; Author: Andrew Britt
+; Date: 28 May 2022
+; Description: JavaScript code for theme files web-330
+; Reference: Professor Krasso, buwebdev GitHub
+===========================================
 */
 function setDefaultTheme()
 {
