@@ -1,0 +1,66 @@
+/*
+Hi there World
+*/
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#icon-mode:hover {
+    cursor: pointer;
+}
+
+#icon-text {
+    padding-left: 10px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.assign-container {
+    padding: 10px;
+}
+
+.assign-content {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+.assign-results-text {
+    text-align: center;
+    font-size: 28px;
+}
+
+.app-header {
+    text-align: center;
+}
+
+.return-home {
+    color: #4f3674;
+    text-decoration: none;
+}
+
+.return-home:hover {
+    background-color: #d6a800;
+    color: #4f3674;
+}
+
+.return-home:visited {
+    color: #3c275A;
+}
+
+.form {
+    display: inline-grid;
+    grid-template-columns: auto;
+}
+
+.form-field {
+    padding: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
