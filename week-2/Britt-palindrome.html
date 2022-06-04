@@ -1,0 +1,100 @@
+<!--
+============================================================
+; Title: Britt-palindrome.html
+; Author: Andrew Britt
+; Date: 3 Jun 2022
+; Description: Palindrome Checker Application 
+; Reference: https://sebhastian.com/palindrome-javascript/
+; Date reference accessed: 3 Jun 2022
+============================================================    
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../site.css">
+    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+        <h1 class="app-header">Welcome to the Palindrome App!</h1>
+        <br />
+    <div id="card-title"><h2>Palindrome Checker</h2>
+        <div id="form-field">
+            <p>
+                <label for="txtPhrase">Phrase value</label>
+                <input id="txtPhrase" type="text">
+            </p>
+                <input type="button" value="Check Phrase" id="btnCheckPhrase" />
+        </div>
+    </div>
+        <br />
+    <a id="returnBtn" href="../index.html">Return</a>
+        <br />
+        <br />
+        <br />
+    <div id="card-title-two">
+        <h2>Palindrome Results</h2>
+        <p id="results0"></p>
+        <p id="results1"></p>
+        <p id="results2"></p>
+        <p id="results3"></p>
+        <p id="results4"></p>
+        <p id="results5"></p>
+    </div>
+   
+    <script>
+//  My onClick event to capture the value 
+    document.getElementById("btnCheckPhrase").onclick = function() {
+        let txtPhrase = document.getElementById("txtPhrase").value;
+        isPalindrome(txtPhrase);    
+    }
+
+    function isPalindrome(txtPhrase) {
+        let re = /[^A-Za-z0-9]/g;
+        let lowRegStr = txtPhrase.toLowerCase().replace(re, "");
+        let len = lowRegStr.length;
+        let reversePhrase = lowRegStr.split("").reverse().join("");
+        let getTodaysDate = new Date().toLocaleDateString('en-us'); 
+
+        console.log(getTodaysDate);
+        console.log(txtPhrase);
+        console.log(reversePhrase);
+        console.log(len);
+        
+        document.getElementById("results0").innerHTML = "Date: " + getTodaysDate;
+        document.getElementById("results1").innerHTML = "Original Phase: " + lowRegStr;
+        document.getElementById("results2").innerHTML = "Reversed Phase: " + reversePhrase;
+        document.getElementById("results3").innerHTML = "Phrase Length: " + len;
+
+        if (lowRegStr === reversePhrase) {
+            document.getElementById("results5").innerHTML = lowRegStr + " is a Palindrome!"
+        }
+        else {
+            document.getElementById("results5").innerHTML = lowRegStr + " not a Palindrome!"
+        }
+    }
+
+
+//for (let i = 0; i < len/2; i++) {
+//}
+       // if (lowRegStr[i] !== lowRegStr[len -1 -i]) {
+         //   return false;
+           // document.getElementById("results5").innerHTML =  lowRegStr + " is not a palindrome!";
+       // }
+        //else {
+            //return true;
+       // document.getElementById("results5").innerHTML =  lowRegStr  + " is a palindrome!";
+       // }
+   // }
+//}
+    </script>
+</body>
+</html>

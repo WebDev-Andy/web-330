@@ -1,0 +1,147 @@
+/*
+=========================================
+; Title: global.css
+; Author: Andrew Britt
+; Date: 28 Mar 2022
+; Description: Global CSS 
+=========================================    
+*/
+
+header {
+    font-weight: bolder;
+}
+
+.return-home {
+    color: #4F3674;
+    text-decoration: none;
+}
+
+#form-field {
+    color: black;
+}
+
+.app-header {
+    text-align: center;
+    color: black;
+    font-size: 28px;
+}
+
+#btnCheckPhrase {
+    background-color: #4F3674;
+    color: white;
+    margin-top: 5%;
+    padding: 10px;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 5px;
+    width: 60%;
+}
+
+#card-title-two {
+    text-align: left;
+    margin-left: 20.5%;
+    border: solid white 1px;
+    width: 55%;
+    box-shadow: -1px 5px 10px -2px grey;
+    padding: 2%;
+    color:#4F3674;
+}
+
+#card-title-two h2 {
+    font-size: 28px;
+    text-align: center
+}
+
+
+#card-title h2 {
+    font-size: 28px;
+    text-align: center
+}
+
+#card-title {
+    text-align: ;
+    margin-left: 20.5%;
+    border: solid white 1px;
+    width: 55%;
+    box-shadow: -1px 5px 10px -2px grey;
+    padding: 2%;
+    color:#4F3674;
+}
+
+.return-home:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+}
+
+.return-home:visited {
+    color: #3C275A;
+}
+
+#btnMyCourse {
+    background-color: antiquewhite;
+    border: solid black 1px;
+    border-radius: 2px;
+}
+
+#btnMyCourse:hover {
+    background-color: #dad878;
+}
+
+#bodyBox {
+    border: solid 1px darkslategray;
+    width: fit-content;
+    padding: 15px;
+    margin-left: 40%;
+    margin-top: 10%;
+    box-shadow: 13px 13px 16px 2px darkslategray;
+}
+
+.drop-down-menu {
+    
+}
+
+#returnBtn {
+    margin-left: 20.5%;
+    color: #453674;
+    text-decoration: none;
+}
+
+#returnBtn:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+}
+
+#returnBtn:visited {
+    color: #3C275A;
+}
+
+#results0 {
+    margin-top: -20px;
+}
+
+#results1 {
+    margin-top: -20px;    
+}
+
+#results2 {
+    margin-top: -20px;
+}
+
+#results3 {
+    margin-top: -20px;
+}
+
+.assign-container {
+    padding: 10px;
+}
+
+.assign-content {
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+.assign-results-text {
+    text-align: center;
+    font-size: 28px;
+}
+
