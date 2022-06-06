@@ -5,6 +5,7 @@
 ; Date: 3 Jun 2022
 ; Description: Palindrome Checker Application 
 ; Reference: https://sebhastian.com/palindrome-javascript/
+https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascript-64fea8191fd7/
 ; Date reference accessed: 3 Jun 2022
 ============================================================    
 -->
@@ -21,11 +22,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title>WEB-330 Enterprise JavaScript II</title>
 </head>
 <body>
-        <h1 class="app-header">Welcome to the Palindrome App!</h1>
+    <h1 class="app-header">
+        Welcome to the Palindrome App!
+    </h1>
         <br />
+<!-- First Card Div -->
     <div id="card-title"><h2>Palindrome Checker</h2>
         <div id="form-field">
             <p>
@@ -40,61 +44,75 @@
         <br />
         <br />
         <br />
+
+<!-- Second Card Div -->
     <div id="card-title-two">
         <h2>Palindrome Results</h2>
-        <p id="results0"></p>
-        <p id="results1"></p>
-        <p id="results2"></p>
-        <p id="results3"></p>
-        <p id="results4"></p>
-        <p id="results5"></p>
+        <p id="assign-results-header"></p>
+        <div id="assign-results-text">
+
+        </div>
     </div>
    
-    <script>
+<script>
+
+// Function to get and return Date
+    function getTodaysDate() {
+        return new Date().toLocaleDateString('en-us');
+    }
+
+// Function to get and return length
+    function getLength(str) {
+        return str.length;
+    }
+
+// function to split, reverse and join the string 
+// Still not working
+    function reverse(str) {
+        return str.split("").reverse().join("");
+    }
+
+// function for Palindrome
+    function isPalindrome(str) {
+        if (reverse(str) === str) {
+            return true;
+        }
+        else return false;
+    }
+
 //  My onClick event to capture the value 
     document.getElementById("btnCheckPhrase").onclick = function() {
         let txtPhrase = document.getElementById("txtPhrase").value;
-        isPalindrome(txtPhrase);    
-    }
+        let assignResults = document.getElementById("assign-results");
+        let today = getTodaysDate();
+        let len = getLength(txtPhrase);
+        let reversedPhrase = reverse(txtPhrase);
 
-    function isPalindrome(txtPhrase) {
-        let re = /[^A-Za-z0-9]/g;
-        let lowRegStr = txtPhrase.toLowerCase().replace(re, "");
-        let len = lowRegStr.length;
-        let reversePhrase = lowRegStr.split("").reverse().join("");
-        let getTodaysDate = new Date().toLocaleDateString('en-us'); 
+// console log to check things are working
+    console.log(today);
+    console.log(len);
+    console.log(reversedPhrase);
+    console.log(txtPhrase);
 
-        console.log(getTodaysDate);
-        console.log(txtPhrase);
-        console.log(reversePhrase);
-        console.log(len);
+// header variable and string build
+        let header = `
+        Date: ${today}<br />
+        Original Phrase: ${txtPhrase}<br />
+        Reversed Phrase: ${reversedPhrase}<br />
+        Phrase Length: ${len}
+        `
+// binding header variable to assign-results-header div
+        document.getElementById("assign-results-header").innerHTML = header;
+        let palinResult = isPalindrome(txtPhrase.toLowerCase);
         
-        document.getElementById("results0").innerHTML = "Date: " + getTodaysDate;
-        document.getElementById("results1").innerHTML = "Original Phase: " + lowRegStr;
-        document.getElementById("results2").innerHTML = "Reversed Phase: " + reversePhrase;
-        document.getElementById("results3").innerHTML = "Phrase Length: " + len;
-
-        if (lowRegStr === reversePhrase) {
-            document.getElementById("results5").innerHTML = lowRegStr + " is a Palindrome!"
+// if statement comparing palindrome results
+        if (palinResult === true) {
+            document.getElementById("assign-results-text").innerHTML = txtPhrase + " <b><u>is</b></u> a Palindrome!"
         }
         else {
-            document.getElementById("results5").innerHTML = lowRegStr + " not a Palindrome!"
+            document.getElementById("assign-results-text").innerHTML = txtPhrase + " <b><u>is not</b></u> a Palindrome!"
         }
-    }
-
-
-//for (let i = 0; i < len/2; i++) {
-//}
-       // if (lowRegStr[i] !== lowRegStr[len -1 -i]) {
-         //   return false;
-           // document.getElementById("results5").innerHTML =  lowRegStr + " is not a palindrome!";
-       // }
-        //else {
-            //return true;
-       // document.getElementById("results5").innerHTML =  lowRegStr  + " is a palindrome!";
-       // }
-   // }
-//}
+    };
     </script>
 </body>
 </html>
