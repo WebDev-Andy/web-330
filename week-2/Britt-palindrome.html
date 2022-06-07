@@ -55,7 +55,6 @@ https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascrip
     </div>
    
 <script>
-
 // Function to get and return Date
     function getTodaysDate() {
         return new Date().toLocaleDateString('en-us');
@@ -68,7 +67,7 @@ https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascrip
 
 // function to split, reverse and join the string 
     function reverse(str) {
-      return str.split('').reverse().join('');
+      return str.toLowerCase().split('').reverse().join('');
     }
 
 // function for Palindrome
@@ -81,7 +80,7 @@ https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascrip
 
 //  My onClick event to capture the value 
     document.getElementById("btnCheckPhrase").onclick = function() {
-        let txtPhrase = document.getElementById("txtPhrase").value;
+        let txtPhrase = document.getElementById("txtPhrase").value.toLowerCase();
         let assignResults = document.getElementById("assign-results");
         let today = getTodaysDate();
         let len = getLength(txtPhrase);
