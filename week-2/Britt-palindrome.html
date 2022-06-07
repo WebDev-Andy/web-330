@@ -48,10 +48,10 @@ https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascrip
 <!-- Second Card Div -->
     <div id="card-title-two">
         <h2>Palindrome Results</h2>
-        <p id="assign-results-header"></p>
-        <div id="assign-results-text">
+            <p id="assign-results-header"></p>
+                <div id="assign-results-text">
 
-        </div>
+                </div>
     </div>
    
 <script>
@@ -67,9 +67,8 @@ https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascrip
     }
 
 // function to split, reverse and join the string 
-// Still not working
     function reverse(str) {
-        return str.split("").reverse().join("");
+      return str.split('').reverse().join('');
     }
 
 // function for Palindrome
@@ -103,14 +102,14 @@ https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascrip
         `
 // binding header variable to assign-results-header div
         document.getElementById("assign-results-header").innerHTML = header;
-        let palinResult = isPalindrome(txtPhrase.toLowerCase);
+        let palinResult = isPalindrome(txtPhrase);
         
 // if statement comparing palindrome results
         if (palinResult === true) {
             document.getElementById("assign-results-text").innerHTML = txtPhrase + " <b><u>is</b></u> a Palindrome!"
         }
         else {
-            document.getElementById("assign-results-text").innerHTML = txtPhrase + " <b><u>is not</b></u> a Palindrome!"
+            document.getElementById("assign-results-text").innerHTML =  txtPhrase + " <b><u>is not</b></u> a Palindrome!"
         }
     };
     </script>
