@@ -1,0 +1,23 @@
+/*
+=========================================
+; Title: restaurant.css
+; Author: Andrew Britt
+; Date: 10 Jun 2022
+; Description: Restaurant CSS file for week-3 assignment
+; References: https://www.w3schools.com/CSSref/pr_grid.asp
+; References: https://www.w3schools.com/CSSref/pr_grid-gap.asp
+=========================================    
+*/
+.grid {
+    padding: 15px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto;
+}
+
+#btnOrder {
+    background-color: #4F3674;
+    color: #fff;
+    width: 100%;
+    padding: 2%;
+}

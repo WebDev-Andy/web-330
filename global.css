@@ -3,9 +3,13 @@
 ; Title: global.css
 ; Author: Andrew Britt
 ; Date: 28 Mar 2022
-; Description: Global CSS 
+; Description: Global CSS from assignments
 =========================================    
 */
+* {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+
 header {
     font-weight: bolder;
 }
@@ -36,30 +40,38 @@ header {
     width: 60%;
 }
 
-#card-title h2 {
+.card-title h2 {
     font-size: 28px;
     text-align: center
 }
 
-#card-title {
-    text-align: ;
+.card {
+    transition: 0.3s;
+    width: 95%;
+    margin-left: 2.5%;
+    box-shadow: -1px 5px 10px -2px grey;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 2em;
+    color: #4F3674;
+    font-weight: 400;
+}
+
+.card-content {
+    padding: 2px 16px;
+}
+
+.card-title-two {
     margin-left: 20.5%;
     border: solid white 1px;
     width: 55%;
     box-shadow: -1px 5px 10px -2px grey;
     padding: 2%;
-    color:#4F3674;
 }
 
-#card-title-two {
-    margin-left: 20.5%;
-    border: solid white 1px;
-    width: 55%;
-    box-shadow: -1px 5px 10px -2px grey;
-    padding: 2%;
-}
-
-#card-title-two h2 {
+.card-title-two h2 {
     font-size: 28px;
     text-align: center;
     color: #4F3674;
@@ -142,7 +154,7 @@ header {
     margin: 3% auto 0;
 }
 
-#assign-results-text {
+.assign-results-text {
     text-align: center;
     font-size: 28px;
 }
