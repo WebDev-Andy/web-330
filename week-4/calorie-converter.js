@@ -3,13 +3,13 @@
 ; File: calorie-converter.js
 ; Author: Andrew Britt
 ; Date: 15 Jun 2022
-; Description:
-; Reference: WEB-330 assign pdf from Professors Krasso & Kumar
+; Description: 
+; Reference: WEB-330 assignment PDF week-4
 ; Date reference accessed: 15 June 2022
 ========================================
 */
 
-import { FoodModel } from "./food-model";
+import { FoodModel } from "./food-model.js";
 
 export class CalorieConverter 
 {
@@ -27,11 +27,11 @@ export class CalorieConverter
             
             return this.data.filter(item=>item.name.toLowerCase().includes(name))
          }
-         
 }
 
+document.getElementById("searchResults").innerHTML = "";
 //console.log(CalorieConverter.data);
-// document.getElementById("searchResults").innerHTML = "hello";
+
 
 
 
