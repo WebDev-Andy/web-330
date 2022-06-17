@@ -1,0 +1,62 @@
+/*
+=========================================
+; Title: Britt-calorie.css
+; Author: Andrew Britt
+; Date: 16 Jun 2022
+; Description:
+; References: 
+=========================================    
+*/
+
+#foodList {
+    float: right;
+    font-size: 12px;
+    color: #df546a;
+    letter-spacing: 2px;
+}
+
+#txtFoodItem {
+    max-width: 70%;
+   min-width: 60%;
+}
+
+#containerMain {
+    width: 40%;
+    height: auto;
+}
+
+.table {
+    margin-bottom: 30px;
+    margin-top: -15px;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #4F3674;
+    color: white;
+    padding-top: 12px;
+    padding-left: 9px;
+    border: solid #ccc 1px;
+    padding-bottom: 12px;
+}
+
+.table td, th {
+
+}
+
+.table-hover, tr:hover {
+    cursor: pointer;
+}
+
+#btnSearch {
+    background-color: #4F3674;
+    color: #fff;
+    padding-left: 2%;
+    padding-right: 2%;
+    align-self: flex-end;
+    margin: 3%;
+    width: 97%;
+}
+

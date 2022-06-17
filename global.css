@@ -48,6 +48,7 @@ header {
 .card {
     transition: 0.3s;
     width: 95%;
+    height: auto;
     margin-left: 2.5%;
     box-shadow: -1px 5px 10px -2px grey;
 }
