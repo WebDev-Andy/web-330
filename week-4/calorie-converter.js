@@ -13,48 +13,26 @@ import { FoodModel } from "./food-model";
 
 export class CalorieConverter 
 {
-    constructor(ID, Name, Calories)
-    {
-        this.ID = ID;
-        this.Name = Name;
-        this.Calories = Calories;
-    }
-        static data = 
-        { 
-            ID: 1107,
-            Name: "Egg",
-            Calories: 78,
-            ID: 1008,
-            Name: "Apple",
-            Calories: 95,
-            ID: 1009,
-            Name: "Hamburger",
-            Calories: 354,
-            ID: 1009,
-            Name: Fries,
-            Calories: 400,
-            ID: 1009,
-            Name: "Banana",
-            Calories: 105,
-            ID: 1009,
-            Name: "Soda",
-            Calories: 150,
-        };
-        find() =>  
+        static data = [ 
+            new FoodModel(1007, "Egg", 78),
+            new FoodModel(1008, "Apple", 95),
+            new FoodModel(1009, "Hamburger", 354),
+            new FoodModel(1010, "Fries", 400),
+            new FoodModel(1011, "Banana", 105),
+            new FoodModel(1012, "Soda", 150),
+         ]
+         
+         static find(name)
+         {
+            
+            return this.data.filter(item=>item.name.toLowerCase().includes(name))
+         }
+         
 }
 
-export class CalorieConverter
-{
-    constructor(id, name, calories)
-    {
-        this.id = id;
-        this.name = name;
-        this.calories = calories;
-    }
-    static data() {
+//console.log(CalorieConverter.data);
+// document.getElementById("searchResults").innerHTML = "hello";
 
-    }
-}
 
-let egg = n
+
 
