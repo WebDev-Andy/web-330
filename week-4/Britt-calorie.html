@@ -63,13 +63,6 @@
 
     </div>
 
-
-    <script>
-
-
-
-    </script>
-
 <!--Module Import JavaScript files-->
 <script type="module">
     
@@ -80,11 +73,15 @@
         {
             let txtFoodItemEl = document.getElementById("txtFoodItem").value;
             let foods = find(txtFoodItemEl);
+            let tableData = document.getElementById("searchResults");
 
+            if(foods === true)
+            {
+                tableData.innerHTML = "working";
+            }
             
-            let tableData = 
 
-            document.getElementById("searchResults").innerHTML = foods;
+           // document.getElementById("searchResults").innerHTML = foods;
         }
     
     
