@@ -65,14 +65,12 @@
 
 
     <script>
-
-//onClickity to capture value for comparison of data values
-// Just for tests
-        document.getElementById("btnSearch").onclick = function()
+        
+//onClick to capture value for comparison of data values
+    document.getElementById("btnSearch").onclick = function()
         {
-            chickenz = document.getElementById("txtFoodItem").value;
-
-            document.getElementById("searchResults").innerHTML = chickenz;
+            let txtFoodItemEl = document.getElementById("txtFoodItem").value;
+            document.getElementById("searchResults").innerHTML = txtFoodItemEl;
         }
 
     </script>

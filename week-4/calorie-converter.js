@@ -1,14 +1,14 @@
 /*
-========================================
+==========================================
 ; File: calorie-converter.js
 ; Author: Andrew Britt
 ; Date: 15 Jun 2022
 ; Description: 
 ; Reference: WEB-330 assignment PDF week-4
 ; Date reference accessed: 15 June 2022
-========================================
+==========================================
 */
-
+// importing of FoodModel class from food-model.js
 import { FoodModel } from "./food-model.js";
 
 export class CalorieConverter 
@@ -29,8 +29,8 @@ export class CalorieConverter
          }
 }
 
-document.getElementById("searchResults").innerHTML = "";
-//console.log(CalorieConverter.data);
+// document.getElementById("searchResults").innerHTML = "";
+// console.log(CalorieConverter.data);
 
 
 
