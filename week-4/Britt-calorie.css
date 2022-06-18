@@ -16,8 +16,8 @@
 }
 
 #txtFoodItem {
-    max-width: 70%;
-   min-width: 60%;
+    width: auto;
+    float: right;
 }
 
 #containerMain {
@@ -55,8 +55,11 @@
     color: #fff;
     padding-left: 2%;
     padding-right: 2%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     align-self: flex-end;
     margin: 3%;
     width: 97%;
+    border: none;
 }
 

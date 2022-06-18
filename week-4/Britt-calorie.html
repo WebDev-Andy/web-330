@@ -33,7 +33,7 @@
     <h1 class="app-header">Welcome to the Calorie App!</h1>
 
     <!--This is the Search Form Div-->
-    <div class="card">
+    <div class="card-title-two">
         <div class="card-title">
             Calories Search Form
         </div>
@@ -53,7 +53,7 @@
     <a id="returnBtn" href="../index.html">Return</a>
   
     <!--This is the Results Div-->
-    <div class="card">
+    <div class="card-title-two">
         <div class="card-title">Search Results</div>
 
         <table>
@@ -65,13 +65,8 @@
 
 
     <script>
-        
-//onClick to capture value for comparison of data values
-    document.getElementById("btnSearch").onclick = function()
-        {
-            let txtFoodItemEl = document.getElementById("txtFoodItem").value;
-            document.getElementById("searchResults").innerHTML = txtFoodItemEl;
-        }
+
+
 
     </script>
 
@@ -79,6 +74,19 @@
 <script type="module">
     
     import { CalorieConverter } from "./calorie-converter.js"; 
+
+    //onClick to capture value for comparison of data values
+    document.getElementById("btnSearch").onclick = function()
+        {
+            let txtFoodItemEl = document.getElementById("txtFoodItem").value;
+            let foods = find(txtFoodItemEl);
+
+            
+            let tableData = 
+
+            document.getElementById("searchResults").innerHTML = foods;
+        }
+    
     
 </script>
 
