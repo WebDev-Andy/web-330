@@ -62,6 +62,18 @@ body.dark-theme {
     --table-hover-color: #fff;
 }
 
+#icon-mode:hover {
+    cursor: pointer;
+}
+
+#icon-text {
+    padding-left: 10px;
+}
+
+.pull-right {
+    float: right;
+}
+
 body {
     color: var(--text-color);
     background: var(--background-color);

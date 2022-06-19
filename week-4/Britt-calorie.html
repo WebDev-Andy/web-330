@@ -25,9 +25,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-
+    <!--Font awesome link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!--Script scr to theme file-->
     <script type="application/javascript" src="../theme.js"></script>
 
     <title>WEB-330 Enterprise JavaScript II</title>
@@ -48,7 +48,7 @@
             <label class="form-field">Enter a food item:</label>
             <input id="txtFoodItem"/>
 
-            <span id="foodList">(Ex: Egg, Apple, Hamburger, Fries, Banana, Soda)</span>
+            <span id="foodList"></span>
 
             <!--Search Button-->
             <button id="btnSearch">Search</button>
@@ -71,6 +71,7 @@
 
 <!--Module Import JavaScript files-->
 <script type="module">
+    //setDefaultTheme();
     setSelectedTheme();
 
     // import from CalorieConverter
@@ -79,12 +80,14 @@
     // variable to bind to input ID
     let txtFoodItemEl = document.getElementById("txtFoodItem");
 
+    //onClick event for comparison of data values and table building
+document.getElementById("btnSearch").onclick = ()=>
+{
+
     // variable to hold input value
     let txtFoodItem = txtFoodItemEl.value.toLowerCase();
 
-//onClick event for comparison of data values and table building
-document.getElementById("btnSearch").onclick = ()=>
-{
+
     // foods variable passes input value to find() for array object return
     let foods = CalorieConverter.find(txtFoodItem);
 
@@ -117,8 +120,9 @@ document.getElementById("btnSearch").onclick = ()=>
 };
 // end of onClick function
 
+let enterKey = document.getElementById("txtFoodItem");
 // Beginning of keyUp function for "click" and "Enter"
-window.addEventListener("keyup",(event)=> 
+enterKey.addEventListener("keyup",(event)=> 
 {
     if(event.key === "Enter") 
     {
@@ -128,15 +132,15 @@ window.addEventListener("keyup",(event)=>
 });
 
     // variable to hold array of objects
-    const foodList=CalorieConverter.data;
+    const foodList = CalorieConverter.data;
 
     // variable of array items
     let foodListData=`<i>(Ex: `;
     for(let fName of foodList) 
     {
-        foodListData+=fName.name+", ";
+        foodListData += fName.name + ", ";
     }
-    document.getElementById("foodList").innerHTML = foodListData.slice(0,-2)+")</i>";
+    document.getElementById("foodList").innerHTML = foodListData.slice(0, -2) + ")</i>";
 
     
 </script>
