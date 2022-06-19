@@ -26,10 +26,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="application/javascript" src="../theme.js"></script>
+
     <title>WEB-330 Enterprise JavaScript II</title>
 </head>
 
-<body>
+<body class="light-theme">
+
+    <i class="fa fa-toggle-off pull-right" style="font-size: 28px;" onclick="toggleMode(this)"><span id="icon-text"></span></i>
+
     <h1 class="app-header">Welcome to the Calorie App!</h1>
 
     <!--This is the Search Form Div-->
@@ -54,40 +61,64 @@
   
     <!--This is the Results Div-->
     <div class="card-title-two">
+
         <div class="card-title">Search Results</div>
+        <br>
 
-        <table>
-            <th id="searchResults"></th>
-            <tb id="searchResults"></tb>
-        </table>
-
+        <div class="card-content" id="searchResults"></div>
     </div>
+
 
 <!--Module Import JavaScript files-->
 <script type="module">
-    
+    setSelectedTheme();
+
+    // import from CalorieConverter
     import { CalorieConverter } from "./calorie-converter.js"; 
 
-    //onClick to capture value for comparison of data values
-    document.getElementById("btnSearch").onclick = function()
-        {
-            let txtFoodItemEl = document.getElementById("txtFoodItem").value;
-            let foods = find(txtFoodItemEl);
-            let tableData = document.getElementById("searchResults");
+    // variable to bind to input ID
+    let txtFoodItemEl = document.getElementById("txtFoodItem");
 
-            if(foods === true)
-            {
-                tableData.style.display = "block";
-                tableData.innerHTML = "working";
-            }
-            else{
-                tableData.style.display = "none";
-            }
-            
+    // variable to hold input value
+    let txtFoodItem = txtFoodItemEl.value.toLowerCase();
 
-           // document.getElementById("searchResults").innerHTML = foods;
-        }
-    
+//onClick event for comparison of data values and table building
+document.getElementById("btnSearch").onclick = ()=>
+{
+    // foods variable passes input value to find() for array object return
+    let foods = CalorieConverter.find(txtFoodItem);
+
+    // tableData variable builds HTML table
+    let tableData = 
+        `
+            <table class="table">
+            <th>Name: </th>
+            <th>Calories: </th>
+            <tbody class="table-hover">
+        `;
+    // for loop iterates over the array to find matching object value
+    for(let food of foods)
+    {
+        // binding tableData to selected tableData return values
+        tableData += 
+        `   <tr>
+            <td>${food.name}</td>
+            <td>${food.calories}</td>
+            </tr>
+        `;
+    }
+    // let tableData = CalorieConverter.data;
+    document.getElementById("searchResults").innerHTML = 
+        tableData +
+        `
+            </tbody></table>
+        `;
+    //console.log(tableData);
+};
+// end of onClick function
+
+// Beginning of keyUp function
+
     
 </script>
 

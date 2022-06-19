@@ -55,11 +55,17 @@ body.dark-theme {
     --btn-hover-background-color: #7d4787;
     --btn-hover-color: #fff;
     --input-border-color: #303030;
+    --table-header-background-color: #d176e1;
+    --table-header-color: #fff;
+    --table-border-color: #303030;
+    --table-hover-background-color: #7d4787;
+    --table-hover-color: #fff;
 }
 
 body {
     color: var(--text-color);
     background: var(--background-color);
+    
 }
 
 h2, h3, h4 {
@@ -118,4 +124,26 @@ a:hover {
 
 .drop-down-menu {
     border-color: var(--input-border-color);
+}
+
+.table {
+    border: solid 1px var(--table-border-color);
+}
+
+.table th {
+    background-color: var(--table-header-background-color);
+    color: var(--table-header-color);
+}
+
+.table td {
+    border: solid 1px var(--table-border-color);
+    padding: 10px;
+}
+
+
+
+.table-hover tr:hover {
+    background-color: var(--table-hover-background-color);
+    color: var(--table-hover-color);
+    cursor: pointer;
 }

@@ -20,18 +20,16 @@ export class CalorieConverter
             new FoodModel(1010, "Fries", 400),
             new FoodModel(1011, "Banana", 105),
             new FoodModel(1012, "Soda", 150),
-         ]
-         
-         static find(name)
-         {
-            
-            return this.data.filter(item=>item.name.toLowerCase().includes(name))
+         ];
+
+         static find(str) {
+            return this.data.filter((data) => {
+              if (str.includes(data.name.toLowerCase())) {
+                return data;
+              }
+            });
          }
-}
-
-// document.getElementById("searchResults").innerHTML = "";
-// console.log(CalorieConverter.data);
-
+      }
 
 
 

@@ -47,9 +47,9 @@ header {
 
 .card {
     transition: 0.3s;
-    width: 95%;
+    width: 600px;
     height: auto;
-    margin-left: 2.5%;
+    margin: 3% auto 0;
     box-shadow: -1px 5px 10px -2px grey;
 }
 
@@ -67,7 +67,7 @@ header {
 .card-title-two {
     margin-left: 20.5%;
     border: solid white 1px;
-    width: 55%;
+    width: 600px;
     box-shadow: -1px 5px 10px -2px grey;
     padding: 2%;
 }
