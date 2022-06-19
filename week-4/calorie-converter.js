@@ -26,7 +26,7 @@ export class CalorieConverter
          static find(str) {
             return this.data.filter((data) => {
               if (str.includes(data.name.toLowerCase())) {
-                return data;
+                return FoodModel;
               }
             });
          }
