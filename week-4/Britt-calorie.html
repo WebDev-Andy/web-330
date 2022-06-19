@@ -117,7 +117,26 @@ document.getElementById("btnSearch").onclick = ()=>
 };
 // end of onClick function
 
-// Beginning of keyUp function
+// Beginning of keyUp function for "click" and "Enter"
+window.addEventListener("keyup",(event)=> 
+{
+    if(event.key === "Enter") 
+    {
+        event.preventDefault();
+        document.getElementById("btnSearch").click();
+    }
+});
+
+    // variable to hold array of objects
+    const foodList=CalorieConverter.data;
+
+    // variable of array items
+    let foodListData=`<i>(Ex: `;
+    for(let fName of foodList) 
+    {
+        foodListData+=fName.name+", ";
+    }
+    document.getElementById("foodList").innerHTML = foodListData.slice(0,-2)+")</i>";
 
     
 </script>
