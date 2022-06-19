@@ -8,6 +8,7 @@
 ; Date reference accessed: 15 June 2022
 ==========================================
 */
+
 // importing of FoodModel class from food-model.js
 import { FoodModel } from "./food-model.js";
 
