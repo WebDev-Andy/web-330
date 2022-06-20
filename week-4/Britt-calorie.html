@@ -11,7 +11,7 @@
 ; References: https://askjavascript.com/javascript-append-string/
 ; References: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
 ; References: https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event
-; Date reference accessed: 16 Jun 2022
+; Date reference accessed: 19 Jun 2022
 =================================================
 -->
 <!DOCTYPE html>
@@ -40,40 +40,43 @@
 </head>
 
 <body class="light-theme">
-
     <i class="fa fa-toggle-off pull-right" style="font-size: 28px;" onclick="toggleMode(this)"><span id="icon-text"></span></i>
-
-    <h1 class="app-header">Welcome to the Calorie App!</h1>
-
-    <!--This is the Search Form Div-->
-    <div class="card-title-two">
-        <div class="card-title">
-            Calories Search Form
-        </div>
-        <div id="containerMain">
-            <label class="form-field">Enter a food item:</label>
-            <input id="txtFoodItem"/>
-
-            <span id="foodList"></span>
-
-            <!--Search Button-->
-            <button id="btnSearch">Search</button>
+        <div class="assign-container">
+            <h1 class="app-header">Welcome to the Calorie App!</h1>
             
+            <!--This is the Search Form Div-->
+            <div class="assign-container">
+                <div class="card">
+                <div class="card-title">Calories Search Form</div>
+                    <div class="card-content">
+                        <div class="form">
+                            <div class="form-field">
+                                <label for="txtFoodItem">Enter a food item:</label>
+                                <input type="text" id="txtFoodItem" class="input" name="FoodItem"/>
+                                    <br>
+                                <span id="foodList"></span>
+                            </div>
+                            <div>
+                                <!--Search Button-->
+                                <button class="btn btn-primary full-width" id="btnSearch">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
     <!--Anchor tag for Return Button-->
-    <a id="returnBtn" href="../index.html">Return</a>
+    <a class="return-home" href="../index.html">Return</a>
   
     <!--This is the Results Div-->
-    <div class="card-title-two">
-
-        <div class="card-title">Search Results</div>
-        <br>
-
-        <div class="card-content" id="searchResults"></div>
+    <div class="assign-container">
+        <div class="card">
+            <div class="card-title">Search Results</div>
+                <br>
+            <div class="assign-text-results card-content" id="searchResults"></div>
+        </div>
     </div>
-
 
 <!--Module Import JavaScript files-->
 <script type="module">
@@ -147,8 +150,6 @@ enterKey.addEventListener("keyup",(event)=>
         foodListData += fName.name + ", ";
     }
     document.getElementById("foodList").innerHTML = foodListData.slice(0, -2) + ")</i>";
-
-    
 </script>
 
 </body>

@@ -53,6 +53,10 @@ header {
     box-shadow: -1px 5px 10px -2px grey;
 }
 
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .card-title {
     text-align: center;
     font-size: 2em;
