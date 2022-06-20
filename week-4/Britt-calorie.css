@@ -3,11 +3,10 @@
 ; Title: Britt-calorie.css
 ; Author: Andrew Britt
 ; Date: 16 Jun 2022
-; Description:
-; References: 
+; Description: CSS for week 4 assignment
+; References: Web-330 Week for PDF instructions
 =========================================    
 */
-
 #foodList {
     float: right;
     font-size: 12px;
@@ -48,7 +47,5 @@ txtFoodItem {
 }
 
 #btnSearch {
-   
-
 }
 

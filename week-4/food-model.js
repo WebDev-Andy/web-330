@@ -3,7 +3,7 @@
 ; File: food-model.js
 ; Author: Andrew Britt
 ; Date: 15 Jun 2022
-; Description:
+; Description: Food Model class and constructor 
 ; Reference: WEB-330 assignment PDF week-4
 ; Date reference accessed: 15 June 2022
 ========================================
