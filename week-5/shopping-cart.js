@@ -14,32 +14,28 @@
 // ShoppingCart class
 export class ShoppingCart 
 {
-    //constructor creating _products array
-    constructor()
-    {
-        // empty array created = _products
-        this._products = [];
-    }
-    // count function returning array length i.e. (amount)
-    count()
-    {
-        return this._products.length;
-    }
-    // add function to push objects into the empty array
-    add(_products)
-    {
-        this._products.push();
-        
-        // iterator to iterate over array and return products
-        *[Symbol.iterator]()
+        //constructor creating _products array
+        constructor()
         {
-            for(let product of this._products)
-            {
-                yield product;
-            }
-            
+            // empty array created = _products
+            this._products = [];
         }
-    
+        // count function returning array length i.e. (amount)
+        count()
+        {
+            return this._products.length;
+        }
+        // add function to push objects into the empty array
+        add(_products)
+        {
+            this._products.push();
+        }
+    // iterator to iterate over array and return products
+    *[Symbol.iterator] ()
+    {
+        for(let product of this._products)
+        {
+            yield product;
+        }
     }
-
 }
