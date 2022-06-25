@@ -33,9 +33,31 @@
     <title>WEB-330 Enterprise JavaScript II</title>
 </head>
 
-<body>
+<body class="light-theme">
+    <i class="fa fa-toggle-off pull-right" style="font-size: 28px;" onclick="toggleMode(this)"><span id="icon-text"></span></i>
+<div class="assign-container">
+    <h1 class="app-header">Welcome to Bob's Automotive Repair Shop!</h1>
+    <div class="assign-container">
+        <div class="card">
+            <div class="card-title">Product Listing</div>
+                <div class="form-field">
+                    <label for="productList">Choose a product:</label>
+                    <select class="drop-down-menu" id="productList">
+                        <option value="Select">--Select--</option>
+                        <option value="19.99">Oil Change</option>
+                        <option value="18.44">Filter Replacement</option>
+                        <option value="9.99">Wiper Fluid Refill</option>
+                    </select>
+                </div>
 
-<h1>Hello there you</h1>
+        </div>
+    </div>
+</div>
+
+    <!--Anchor tag for Return Button-->
+    <a class="return-home" href="../index.html">Return</a>
+    <br>
+
 
 <script>
 
