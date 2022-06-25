@@ -64,6 +64,7 @@
             <div class="card-content">
                 <table class="table">
                     <tr>
+                        <!-- Testing look of table, not real values -->
                         <th id="shoppingCart">temp: ID</th>
                         <th id="shoppingCart">temp: Name</th>
                         <th id="shoppingCart">temp: Price</th>
@@ -83,7 +84,6 @@
                         <td id="shoppingCart">placeholder</td>
                         <td id="shoppingCart">placeholder</td>
                     </tr>
-                </th>
                 </table>
                 <br>
             </div>
@@ -96,12 +96,16 @@
     //setDefaultTheme();
     setSelectedTheme();
 
+    // importing of classes from JavaScript files
     import { Product } from "./product.js";
     import { ShoppingCart } from "./shopping-cart.js";
 
     // variable to bind drop-down value of productList 
     let productList = document.getElementById('productList').value;
+    // testing to confirm variable captures selected values
     console.log(productList);
+
+
 
 </script>
 
