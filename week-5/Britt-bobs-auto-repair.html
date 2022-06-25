@@ -53,7 +53,8 @@
                 <button class="btn btn-primary full-width" id="btnAddProduct">Add to Cart</button>
             </div>
         </div>
-     
+        <br>
+
         <!--Anchor tag for Return Button-->
         <a class="return-home" href="../index.html">Return</a>
         <br>
@@ -63,24 +64,24 @@
             <div class="card-content">
                 <table class="table">
                     <tr>
-                        <th>temp: ID</th>
-                        <th>temp: Name</th>
-                        <th>temp: Price</th>
+                        <th id="shoppingCart">temp: ID</th>
+                        <th id="shoppingCart">temp: Name</th>
+                        <th id="shoppingCart">temp: Price</th>
                     </tr>
                     <tr>
-                        <td>placeholder</td>
-                        <td>placeholder</td>
-                        <td>placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
                     </tr>
                     <tr>
-                        <td>placeholder</td>
-                        <td>placeholder</td>
-                        <td>placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
                     </tr>
                     <tr>
-                        <td>placeholder</td>
-                        <td>placeholder</td>
-                        <td>placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
+                        <td id="shoppingCart">placeholder</td>
                     </tr>
                 </th>
                 </table>
@@ -90,12 +91,17 @@
     </div>
 </div>
 
-<script>
+<script type="module">
 
-// variable to bind drop-down value of productList 
-let productList = document.getElementById('productList').value;
-console.log(productList);
+    //setDefaultTheme();
+    setSelectedTheme();
 
+    import { Product } from "./product.js";
+    import { ShoppingCart } from "./shopping-cart.js";
+
+    // variable to bind drop-down value of productList 
+    let productList = document.getElementById('productList').value;
+    console.log(productList);
 
 </script>
 
