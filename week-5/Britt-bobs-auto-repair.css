@@ -7,8 +7,6 @@
 ; References: Web-330 Week-5 PDF instructions
 =========================================    
 */
-
-
 #cart-message {
     float: left;
     color: #df546a;
@@ -22,10 +20,6 @@
 
 .fa-shopping-cart {
     text-align: center;
-}
-
-#cartIcon {
-    align-items: center;
 }
 
 cart-component {
