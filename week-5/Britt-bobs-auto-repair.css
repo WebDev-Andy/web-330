@@ -8,8 +8,9 @@
 =========================================    
 */
 
+
 #cart-message {
-    float: right;
+    float: left;
     color: #df546a;
     font-size: 12px;
     letter-spacing: 2px;
@@ -17,4 +18,16 @@
 
 #cart-message:hover {
     cursor: pointer;
+}
+
+.fa-shopping-cart {
+    text-align: center;
+}
+
+#cartIcon {
+    align-items: center;
+}
+
+cart-component {
+    margin-left: 45%;
 }

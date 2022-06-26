@@ -32,6 +32,8 @@
     <!--Script scr to theme file-->
     <script type="application/javascript" src="../theme.js"></script>
 
+    <script type="application/javascript" src="cart-component.js"></script>
+
     <title>WEB-330 Enterprise JavaScript II</title>
 </head>
 
@@ -42,9 +44,10 @@
 
 <div class="assign-container">
     <h1 class="app-header">Welcome to Bob's Automotive Repair Shop!</h1>
-    <div class="assign-container">
+    <div class="assign-content">
         <div class="card">
             <div class="card-title">Product Listing</div>
+            <cart-component class="card-title" id="cartComponent"></cart-component>
             <div class="form-field">
                 <label for="productList">Choose a product:</label>
                 <select class="drop-down-menu" id="productList">
@@ -53,7 +56,10 @@
                     <option value="18.44">Filter Replacement</option>
                     <option value="9.99">Wiper Fluid Refill</option>
                 </select>
+                <br>
                 <i id="cart-message">To view your shopping cart click on the cart icon</i>
+                <br>
+                <br>
                 <i id="cartIcon"></i>
                 <button class="btn btn-primary full-width" id="btnAddProduct">Add to Cart</button>
             </div>
@@ -63,19 +69,19 @@
         <!--Anchor tag for Return Button-->
         <a class="return-home" href="../index.html">Return</a>
         <br>
+        <!-- table results div -->
         <div class="card">
             <div class="card-title">Shopping Cart</div>
-        
-            <div class="card-content">
-                <div>
-                    <br>
-                    <div class="assign-text-results card-content" id="shoppingCart"></div>
-                </div>
+            <div class="card-content" id="shoppingCart">
+                <br>
+                <table class="table" id="cartDisplayTable"></table>
                 <br>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <script type="module">
 
@@ -85,24 +91,27 @@
     // importing of classes from JavaScript files
     import { Product } from "./product.js";
     import { ShoppingCart } from "./shopping-cart.js";
-    //import { CartComponent } from "./cart-component.js";
+  
 
     // new instance of ShoppingCart object
     let shoppingCart = new ShoppingCart;
 
-    // declaration of setCartCount function
-    function setCartCount(){}; 
+    // declaring the setCartCount function
+    setCartCount();
+  
 
+
+    // onClick button for btnAddProduct
     document.getElementById('btnAddProduct').onclick = () =>
     {
         // variable to bind drop-down value of productList 
         let productList = document.getElementById('productList');
-        
         // binding productList text to product variable
         let product = productList.options[productList.selectedIndex].text;
-
         // binding productList value to productValue variable
         let productValue = productList.options[productList.selectedIndex].value;
+
+ 
 
         // if statement to show alert of product and price
         if (product != "--Select--")
@@ -112,19 +121,29 @@
             setCartCount();
             {
                 return alert(product + " was added to your shopping cart!");
-
             }
-                     
         }
- 
     };
   
+    // declaration of setCartCount function
+    function setCartCount()
+    {
+        document.getElementById('cart-count').innerHTML = shoppingCart.count(); 
+    }
 
     document.getElementById('cartIcon').onclick = function()
     {
-        let cartDisplayTable = `<table class="table"><tr><th>ID</th><th>Name</th><th>Price</th>`;
+        let cartDisplayTable = `
+        <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>`;
 
-        for (let _products of shoppingCart)
+        for (let _products of shoppingCart.iterator())
         {
             cartDisplayTable += 
             `
@@ -136,13 +155,8 @@
             `
         }
         cartDisplayTable += `</table>`
-        document.getElementById('shoppingCart').innerHTML = cartDisplayTable;
+        document.getElementById('cartDisplayTable').innerHTML = cartDisplayTable;
     };
-
-    setCartCount()
-    {
-        document.getElementById('cart-count').innerHTML = shoppingCart.count();
-    }
 
 </script>
 

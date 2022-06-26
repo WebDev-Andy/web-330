@@ -12,7 +12,7 @@
 */
 
 // CartComponent Class
-export class CartComponent extends HTMLElement
+class CartComponent extends HTMLElement
 {
     constructor()
     {

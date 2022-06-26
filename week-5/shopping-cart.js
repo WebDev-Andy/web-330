@@ -30,7 +30,8 @@ export class ShoppingCart
             this._products.push(products);
         }
     // iterator to iterate over array and return products
-    *[Symbol.iterator] ()
+    //*[Symbol.iterator] ()
+        * iterator()
     {
         for(let product of this._products)
         {
