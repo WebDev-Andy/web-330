@@ -65,22 +65,23 @@
             </div>
         </div>
         <br>
-
         <!--Anchor tag for Return Button-->
         <a class="return-home" href="../index.html">Return</a>
-        <br>
+    </div>
+
         <!-- table results div -->
-        <div class="card">
-            <div class="card-title">Shopping Cart</div>
-            <div class="card-content" id="shoppingCart">
+    <div class="assign-container">
+        <div class="assign-content">
+            <div class="card">
+                <div class="card-title">Shopping Cart</div>
+                <div class="card-content" id="shoppingCart"></div>
                 <br>
-                <table class="table" id="cartDisplayTable"></table>
+                <div  class="assign-text-results card-content" id="cartDisplayTable"></div>
                 <br>
             </div>
         </div>
     </div>
 </div>
-
 
 
 <script type="module">
@@ -134,28 +135,29 @@
     document.getElementById('cartIcon').onclick = function()
     {
         let cartDisplayTable = `
-        <table class="table">
-        <thead>
-            <tr>
+            <table class="table">
                 <th>ID</th>
                 <th>Name</th>
                 <th>Price</th>
-            </tr>
-        </thead>`;
+            <tbody class="table-hover">
+            `;
 
         for (let _products of shoppingCart.iterator())
         {
             cartDisplayTable += 
             `
-            <tr>
-                <td>${_products.id}</td>
-                <td>${_products.name}</td>
-                <td>${_products.price}</td>
-            </tr>
-            `
+                <tr>
+                    <td>${_products.id}</td>
+                    <td>${_products.name}</td>
+                    <td>${_products.price}</td>
+                </tr>
+            `;
         }
-        cartDisplayTable += `</table>`
-        document.getElementById('cartDisplayTable').innerHTML = cartDisplayTable;
+        document.getElementById('cartDisplayTable').innerHTML = 
+            cartDisplayTable + 
+            `
+            </tbody></table>
+            `;
     };
 
 </script>
