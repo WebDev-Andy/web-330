@@ -25,8 +25,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
     <!--Font awesome link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <!--Script scr to theme file-->
     <script type="application/javascript" src="../theme.js"></script>
 
@@ -35,6 +37,7 @@
 
 <body class="light-theme">
 
+    <!-- code for night/day mode button and functionality -->
     <i class="fa fa-toggle-off pull-right" style="font-size: 28px;" onclick="toggleMode(this)"><span id="icon-text"></span></i>
 
 <div class="assign-container">
@@ -50,6 +53,8 @@
                     <option value="18.44">Filter Replacement</option>
                     <option value="9.99">Wiper Fluid Refill</option>
                 </select>
+                <i id="cart-message">To view your shopping cart click on the cart icon</i>
+                <i id="cartIcon"></i>
                 <button class="btn btn-primary full-width" id="btnAddProduct">Add to Cart</button>
             </div>
         </div>
@@ -62,29 +67,10 @@
             <div class="card-title">Shopping Cart</div>
         
             <div class="card-content">
-                <table class="table">
-                    <tr>
-                        <!-- Testing look of table, not real values -->
-                        <th id="shoppingCart">temp: ID</th>
-                        <th id="shoppingCart">temp: Name</th>
-                        <th id="shoppingCart">temp: Price</th>
-                    </tr>
-                    <tr>
-                        <td id="shoppingCart">placeholder</td>
-                        <td id="shoppingCart">placeholder</td>
-                        <td id="shoppingCart">placeholder</td>
-                    </tr>
-                    <tr>
-                        <td id="shoppingCart">placeholder</td>
-                        <td id="shoppingCart">placeholder</td>
-                        <td id="shoppingCart">placeholder</td>
-                    </tr>
-                    <tr>
-                        <td id="shoppingCart">placeholder</td>
-                        <td id="shoppingCart">placeholder</td>
-                        <td id="shoppingCart">placeholder</td>
-                    </tr>
-                </table>
+                <div>
+                    <br>
+                    <div class="assign-text-results card-content" id="shoppingCart"></div>
+                </div>
                 <br>
             </div>
         </div>
@@ -99,13 +85,64 @@
     // importing of classes from JavaScript files
     import { Product } from "./product.js";
     import { ShoppingCart } from "./shopping-cart.js";
+    //import { CartComponent } from "./cart-component.js";
 
-    // variable to bind drop-down value of productList 
-    let productList = document.getElementById('productList').value;
-    // testing to confirm variable captures selected values
-    console.log(productList);
+    // new instance of ShoppingCart object
+    let shoppingCart = new ShoppingCart;
 
+    // declaration of setCartCount function
+    function setCartCount(){}; 
 
+    document.getElementById('btnAddProduct').onclick = () =>
+    {
+        // variable to bind drop-down value of productList 
+        let productList = document.getElementById('productList');
+        
+        // binding productList text to product variable
+        let product = productList.options[productList.selectedIndex].text;
+
+        // binding productList value to productValue variable
+        let productValue = productList.options[productList.selectedIndex].value;
+
+        // if statement to show alert of product and price
+        if (product != "--Select--")
+        {
+            shoppingCart.add(new Product(product, productValue));
+            // calling the setCartCount function
+            setCartCount();
+            {
+                return alert(product + " was added to your shopping cart!");
+
+            }
+                     
+        }
+ 
+    };
+  
+
+    document.getElementById('cartIcon').onclick = function()
+    {
+        let cartDisplayTable = `<table class="table"><tr><th>ID</th><th>Name</th><th>Price</th>`;
+
+        for (let _products of shoppingCart)
+        {
+            cartDisplayTable += 
+            `
+            <tr>
+                <td>${_products.id}</td>
+                <td>${_products.name}</td>
+                <td>${_products.price}</td>
+            </tr>
+            `
+        }
+        cartDisplayTable += `</table>`
+        document.getElementById('shoppingCart').innerHTML = cartDisplayTable;
+    };
+
+    setCartCount()
+    {
+        document.getElementById('cart-count').innerHTML = shoppingCart.count();
+    }
 
 </script>
 

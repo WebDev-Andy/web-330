@@ -10,7 +10,6 @@
 ; Date reference accessed: 24 June 2022
 ========================================
 */
-
 // ShoppingCart class
 export class ShoppingCart 
 {
@@ -26,9 +25,9 @@ export class ShoppingCart
             return this._products.length;
         }
         // add function to push objects into the empty array
-        add(_products)
+        add(products)
         {
-            this._products.push();
+            this._products.push(products);
         }
     // iterator to iterate over array and return products
     *[Symbol.iterator] ()
