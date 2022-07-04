@@ -1,0 +1,23 @@
+/*
+=========================================
+; Title: Britt-future-value.css
+; Author: Andrew Britt
+; Date: 1 July 2022
+; Description: CSS for week 6 assignment
+; References: Web-330 Week-6 PDF instructions
+=========================================    
+*/
+
+/* Danger text stylings */
+.danger {
+    float: right;
+    color: #df546a;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+  
+/* Label form stylings */
+.form-label {
+    display: inline-block;
+    padding-top: 1rem;
+}
