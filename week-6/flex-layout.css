@@ -1,10 +1,11 @@
 /**
-; Title: flex-layout.css
-; Author: Professor Krasso
-; Date: 2/4/2021
-; Description: Styling to build a reusable flex layout; inspired by Bootstrap and Angular FlexLayout
-; Sources: Bootstrap: https://github.com/twbs/bootstrap
-; Sources: Angular FlexLayout: https://github.com/angular/flex-layout
+    Title: flex-layout.css
+    Author: Professor Krasso
+    Date: 2/4/2021
+    Description: Styling to build a reusable flex layout; inspired by Bootstrap and Angular FlexLayout
+    Sources:
+        Bootstrap: https://github.com/twbs/bootstrap
+        Angular FlexLayout: https://github.com/angular/flex-layout
  */
 
  :root {
