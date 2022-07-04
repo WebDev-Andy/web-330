@@ -37,10 +37,9 @@
     <title>WEB-330 Enterprise JavaScript II</title>
 </head>
 
-<body class="light-theme">
-
-    <!-- code for night/day mode button and functionality -->
-    <i class="fa fa-toggle-off pull-right" style="font-size: 28px;" onclick="toggleMode(this)"><span id="icon-text"></span></i>
+<div class="light-theme">
+    <i onclick="toggleMode(this)" id="icon-mode" class="fa fa-toggle-off pull-right" style="font-size: 28px"><span
+                id="icon-text"></span></i>
 
 <div class="assign-container">
     <h1 class="app-header">Welcome to Bob's Automotive Repair Shop!</h1>
@@ -86,8 +85,8 @@
 
 <script type="module">
 
-    //setDefaultTheme();
-    setSelectedTheme();
+    setDefaultTheme();
+    //setSelectedTheme();
 
     // importing of classes from JavaScript files
     import { Product } from "./product.js";
@@ -162,5 +161,5 @@
 
 </script>
 
-</body>
+</div>
 </html>
