@@ -159,6 +159,7 @@ a:hover {
 
 .table {
     border: solid 1px var(--table-border-color);
+    border-collapse: collapse;
 }
 
 .table th {
@@ -170,8 +171,6 @@ a:hover {
     border: solid 1px var(--table-border-color);
     padding: 10px;
 }
-
-
 
 .table-hover tr:hover {
     background-color: var(--table-hover-background-color);
