@@ -23,7 +23,7 @@ export class HttpClient
         // creates object literal
         const res = await fetch(urlObj.toString(), 
         { 
-            "GET", 
+            method: "GET",
         })
 
         // return res object literal as JSON
